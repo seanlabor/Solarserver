@@ -26,14 +26,14 @@ jobs:
           MQTT_USERNAME: ${{ secrets.MQTT_USERNAME }}
           MQTT_PASSWORD: ${{ secrets.MQTT_PASSWORD }}
         run: |
-          # make sure the config folder exists
           mkdir -p "$GITHUB_WORKSPACE/mosquitto/config"
-          # generate a fresh password.txt (overwrite with -c + batch -b)
           docker run --rm \
             -v "$GITHUB_WORKSPACE/mosquitto/config:/mosquitto/config" \
             eclipse-mosquitto mosquitto_passwd -c -b \
               /mosquitto/config/password.txt \
               "$MQTT_USERNAME" "$MQTT_PASSWORD"
+          # lock it down so only the owner can read/write
+          chmod 600 "$GITHUB_WORKSPACE/mosquitto/config/password.txt"
 
       # 4) Deploy your stack
       - name: Prepare config and deploy
