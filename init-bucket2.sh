@@ -13,6 +13,6 @@ done
 echo "InfluxDB is healthy, creating additional buckets..."
 
 # Create extra buckets
-influx bucket create --name Sungather_SG12RG --org "Solar" --token "Y5gQT9kCm8R7pX2jwFEbV6uNHMqLd4zA3PyGK0oUztsb"
+influx bucket create --name Sungather_SG12RG --org Solar --token 
 
 echo "Buckets created!"
