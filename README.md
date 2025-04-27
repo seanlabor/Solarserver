@@ -49,7 +49,7 @@ The key's randomart image is:
 | o . . +.B       |
 |. . o o ..+      |
 |   + + +S        |
-|. * o + ..     E |
+|. * o + .    E |
 |.o o o    + = .  |
 |.  .. . .+ +.=   |
 |oo. .. o. o.o.   |
