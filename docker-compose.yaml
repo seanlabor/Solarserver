@@ -5,7 +5,7 @@ services:
     image: homeassistant/home-assistant:stable
     container_name: homeassistant
     volumes:
-      - ./homeassistant:/config
+      - /docker-static-config-data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     network_mode: host
@@ -14,7 +14,7 @@ services:
     image: influxdb:2.7
     container_name: influxdb
     volumes:
-      - ./influxdb:/var/lib/influxdb2
+      - /docker-static-config-data/influxdb:/var/lib/influxdb2
     ports:
       - "8086:8086"
     environment:
@@ -31,7 +31,7 @@ services:
     image: eclipse-mosquitto:latest
     container_name: mqtt
     volumes:
-      - ./mosquitto:/mosquitto
+      - /docker-static-config-data/mosquitto:/mosquitto
     ports:
       - "1883:1883"
       - "9001:9001"
@@ -43,8 +43,8 @@ services:
     container_name: solargather_SG4RG
     restart: always
     volumes:
-      - ./solargather_SG4RG/config.yaml:/config/config.yaml
-      - ./solargather_SG4RG/logs:/logs
+      - /docker-static-config-data/solargather_SG4RG/config.yaml:/config/config.yaml
+      - /docker-static-config-data/solargather_SG4RG/logs:/logs
     environment:
       - TZ=Europe/Berlin
     ports:
@@ -60,8 +60,8 @@ services:
     container_name: solargather_SG12RG
     restart: always
     volumes:
-      - ./solargather_SG12RG/config.yaml:/config/config.yaml
-      - ./solargather_SG12RG/logs:/logs
+      - /docker-static-config-data/solargather_SG12RG/config.yaml:/config/config.yaml
+      - /docker-static-config-data/solargather_SG12RG/logs:/logs
     environment:
       - TZ=Europe/Berlin
     ports:
@@ -71,5 +71,3 @@ services:
       options:
         max-size: "10m"
         max-file: "7"
-
-#trigger
