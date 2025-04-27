@@ -12,13 +12,14 @@ jobs:
 
     steps:
 
-      - name: Setup Mosquitto Password
-        run: |
-          mkdir -p ./mosquitto/config
-          touch ./mosquitto/config/password.txt
-          docker run --rm -v $(pwd)/mosquitto/config:/mosquitto/config eclipse-mosquitto mosquitto_passwd -b /mosquitto/config/password.txt ${MQTT_USERNAME} ${MQTT_PASSWORD}
       - name: Set owner of working dir recurively (Linux)
         run: sudo chown -R $(whoami) .
+
+      - name: Setup Mosquitto Password
+        run: |
+          sudo mkdir -p ./mosquitto/config
+          sudo touch ./mosquitto/config/password.txt
+          docker run --rm -v $(pwd)/mosquitto/config:/mosquitto/config eclipse-mosquitto mosquitto_passwd -b /mosquitto/config/password.txt ${MQTT_USERNAME} ${MQTT_PASSWORD}
 
       - name: Checkout code
         uses: actions/checkout@v4
