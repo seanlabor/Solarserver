@@ -1,6 +1,5 @@
 name: Deploy SolarGather to Proxmox
 
-
 on:
   push:
     branches:
@@ -11,22 +10,32 @@ jobs:
     runs-on: self-hosted
 
     steps:
-
-      - name: Set owner of working dir recurively (Linux)
-        run: sudo chown -R $(whoami) .
-
-      - name: Setup Mosquitto Password
-        run: |
-          sudo mkdir -p ./mosquitto/config
-          sudo touch ./mosquitto/config/password.txt
-          docker run --rm -v $(pwd)/mosquitto/config:/mosquitto/config eclipse-mosquitto mosquitto_passwd -b /mosquitto/config/password.txt ${MQTT_USERNAME} ${MQTT_PASSWORD}
-
+      # 1) Get your code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2) Fix ownership so we can clean and overwrite everything
+      - name: Fix workspace permissions
+        if: runner.os == 'Linux'
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+
+      # 3) Generate Mosquitto password file
+      - name: Setup Mosquitto Password
+        env:
+          MQTT_USERNAME: ${{ secrets.MQTT_USERNAME }}
+          MQTT_PASSWORD: ${{ secrets.MQTT_PASSWORD }}
+        run: |
+          # make sure the config folder exists
+          mkdir -p "$GITHUB_WORKSPACE/mosquitto/config"
+          # generate a fresh password.txt (overwrite with -c + batch -b)
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE/mosquitto/config:/mosquitto/config" \
+            eclipse-mosquitto mosquitto_passwd -c -b \
+              /mosquitto/config/password.txt \
+              "$MQTT_USERNAME" "$MQTT_PASSWORD"
+
+      # 4) Deploy your stack
       - name: Prepare config and deploy
         run: |
           chmod +x prepare-config-and-deploy.sh
           ./prepare-config-and-deploy.sh
-
-
