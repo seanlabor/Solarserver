@@ -3,6 +3,13 @@ version: "3.8"
 services:
   homeassistant:
     image: homeassistant/home-assistant:stable
+    steps:
+    - name: Fix permissions
+      run: |
+        if [ -d "/home/florian/actions-runner/_work/Solarserver/Solarserver" ]; then
+          sudo chown -R $(whoami) /home/florian/actions-runner/_work/Solarserver/Solarserver
+          sudo chmod -R +w /home/florian/actions-runner/_work/Solarserver/Solarserver
+        fi
     container_name: homeassistant
     volumes:
       - ./homeassistant:/config
