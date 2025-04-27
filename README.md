@@ -70,6 +70,7 @@ This runner will have the following labels: 'self-hosted', 'Linux', 'X64'
 Enter any additional labels (ex. label-1,label-2): [press Enter to skip]
 
 # Homeassistant
+http://192.168.178.98:8123/
 
 solar//sesam
 

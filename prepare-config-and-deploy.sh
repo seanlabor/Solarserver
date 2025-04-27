@@ -4,8 +4,6 @@ echo ">> Preparing SolarGather config.yaml with environment variables..."
 export $(cat .env | xargs)
 envsubst < solargather_SG12RG/config.template.yaml > solargather_SG12RG/config.yaml
 envsubst < solargather_SG4RG/config.template.yaml > solargather_SG4RG/config.yaml
-envsubst < .github\workflows\deploy.template.yaml > .github\workflows\deploy.yaml
-
 
 line65=$(sed -n '38p' solargather_SG12RG/config.yaml)
 echo "THis should contain a full url: $line65"

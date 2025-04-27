@@ -36,7 +36,7 @@ exports:
   # Output data to InfluxDB
   - name: influxdb
     enabled: True                          # [Optional] Default is False
-    url: "${VM_HOST_IP}:8086"            # [Optional] Default URL is http://localhost:8086
+    url: ${INFLUX_DB_URL}           # [Optional] Default URL is http://localhost:8086
     token: ${INFLUXDB_INIT_TOKEN}                            # [Required] API Token OR Username:Password (for influxdb v1.8x comment it out and use username + password)
     # username:  ${INFLUXDB_INIT_USERNAME}                         # [Optional] Username if not using token
     # password:   ${INFLUXDB_INIT_PASSWORD}                          # [Optional] Password if not using token

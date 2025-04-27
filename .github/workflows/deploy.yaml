@@ -1,0 +1,24 @@
+name: Deploy SolarGather to Proxmox
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      # 1) Fix ownership so we can clean and overwrite everything
+      - name: Fix workspace permissions
+        if: runner.os == 'Linux'
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+      # 2) Get your code
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # 3) Deploy your stack
+      - name: Prepare config and deploy
+        run: |
+          chmod +x prepare-config-and-deploy.sh
+          ./prepare-config-and-deploy.sh
