@@ -1,3 +1,6 @@
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
+#Keine Config fuer MQTT hier erstellen! Muss in HA als Integration hinzugefuegt werden
+# mqtt:
+#   broker: 127.0.0.1
+#   port: 1883
+#   discovery: true           # <--- important!
+#   discovery_prefix: homeassistant

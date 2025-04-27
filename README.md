@@ -1,7 +1,10 @@
 https://www.naturalborncoder.com/2023/07/creating-a-basic-vm-on-proxmox/
 
 Proxmox Host IP: 192.168.178.10
+
+
 docker-container
+ ip: 192.168.178.98
  host: docker-container
  domain: .net
  Login:
@@ -65,3 +68,35 @@ Enter the name of runner: [press Enter for docker-container]
 
 This runner will have the following labels: 'self-hosted', 'Linux', 'X64'
 Enter any additional labels (ex. label-1,label-2): [press Enter to skip]
+
+# Homeassistant
+
+solar//sesam
+
+
+# Connect VSC via SSH to directory
+
+Open the Command Palette (Ctrl Shift P).
+
+Type “Remote-SSH: Connect to Host…” and select it.
+
+Choose docker-container (the alias you just added).
+
+VS Code will open a new window and SSH you into that VM.
+
+
+# Config Files location
+
+in Proxmox VM Container:
+~/actions-runner/_work/Solarserver/Solarserver/homeassistant$
+
+
+# Influx
+
+Test
+
+needs Influx CLI - installed on docker-container
+
+influx write -b Sungather -o Solar -t Y5gQT9kCm8R7pX2jwFEbV6uNHMqLd4zA3PyGK0oUztsb --precision s "test,host=vm value=1.0"
+
+http://192.168.178.98:8086/signin
