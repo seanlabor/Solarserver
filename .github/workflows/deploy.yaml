@@ -7,27 +7,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+      - name: Prepare config and deploy
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
-      - name: Copy project files to server
-        run: |
-          rsync -avz -e "ssh -i ~/.ssh/id_ed25519" ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/your-project-folder
-
-      - name: Deploy on server
-        run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-            cd ~/your-project-folder &&
-            chmod +x prepare-config-and-deploy.sh &&
-            ./prepare-config-and-deploy.sh
-          "
+          chmod +x prepare-config-and-deploy.sh
+          ./prepare-config-and-deploy.sh

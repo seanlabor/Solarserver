@@ -56,4 +56,12 @@ PS F:\Florian\python_projekte_Solar\solar-proxmox-server>
 
 ssh-copy-id -i C:\Users\Susanna/.ssh/id_ed25519.pub youruser@your-vm-ip
 
-Trigger .
+
+# Runner Registration
+
+Enter the name of the runner group to add this runner to: [press Enter for Default] 
+
+Enter the name of runner: [press Enter for docker-container]
+
+This runner will have the following labels: 'self-hosted', 'Linux', 'X64'
+Enter any additional labels (ex. label-1,label-2): [press Enter to skip]
