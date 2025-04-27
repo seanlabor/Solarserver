@@ -10,14 +10,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # 1) Get your code
-      - name: Checkout code
-        uses: actions/checkout@v4
+
 
       # 2) Fix ownership so we can clean and overwrite everything
       - name: Fix workspace permissions
         if: runner.os == 'Linux'
         run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+      # 1) Get your code
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       # 3) Generate Mosquitto password file
       - name: Setup Mosquitto Password
