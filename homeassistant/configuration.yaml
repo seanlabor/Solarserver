@@ -24,22 +24,20 @@ modbus:
         scale: 0.1
         precision: 2
         scan_interval: 10
-      - name: "DTSU666_Spannung_A"
-        unique_id: DTSU_Spannung_A
-        address: 0x2006
-        data_type: float32
-        slave: 254
-        unit_of_measurement: V
-        input_type: input
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
+      # - name: "DTSU666_Spannung_A"
+      #   unique_id: DTSU_Spannung_A
+      #   address: 0x2006
+      #   data_type: float32
+      #   slave: 254
+      #   input_type: input
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
       - name: "DTSU666_Spannung_B"
         unique_id: DTSU_Spannung_B
         address: 0x2008
         data_type: float32
         slave: 254
-        unit_of_measurement: V
         input_type: input
         scale: 0.1
         precision: 2
