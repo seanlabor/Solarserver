@@ -1,3 +1,6 @@
+#Funktioniert nicht!!!
+
+
 #!/bin/bash
 
 # Load environment variables
