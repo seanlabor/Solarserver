@@ -71,20 +71,6 @@ exports:
         device_class: energy
         state_class: total_increasing
         icon: "mdi:solar-power"
-      - name: "Daily Export to Grid"
-        sensor_type: sensor
-        register: daily_export_to_grid
-        device_class: energy
-        state_class: total_increasing
-        icon: "mdi:transmission-tower-export"
-        value_template: "{{ value_json.daily_export_to_grid | round(2) }}"
-      - name: "Daily Import from Grid"
-        sensor_type: sensor
-        register: daily_import_from_grid
-        device_class: energy
-        state_class: total_increasing
-        icon: "mdi:transmission-tower-import"
-        value_template: "{{ value_json.daily_import_from_grid | round(2) }}"
       - name: "Temperature"
         sensor_type: sensor
         register: internal_temperature
@@ -101,16 +87,7 @@ exports:
         register: total_active_power
         dev_class: power
         state_class: measurement
-      - name: "Active Export to Grid"
-        sensor_type: sensor
-        register: export_to_grid
-        dev_class: power
-        state_class: measurement
-      - name: "Active Import from Grid"
-        sensor_type: sensor
-        register: import_from_grid
-        dev_class: power
-        state_class: measurement
+
 
   # Publish Registers to PVOutput
   - name: pvoutput      
