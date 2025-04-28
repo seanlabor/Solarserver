@@ -9,7 +9,7 @@ modbus:
         unique_id: DTSU_Spannung_A
         address: 0x2006
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: V
         input_type: holding
         scale: 0.1
@@ -19,7 +19,7 @@ modbus:
         unique_id: DTSU_Spannung_B
         address: 0x2008
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: V
         input_type: holding
         scale: 0.1
@@ -29,7 +29,7 @@ modbus:
         unique_id: DTSU_Spannung_C
         address: 0x200A
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: V
         input_type: holding
         scale: 0.1
@@ -39,7 +39,7 @@ modbus:
         unique_id: DTSU_Strom_A
         address: 0x200C
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: A
         input_type: holding
         scale: 0.001
@@ -49,7 +49,7 @@ modbus:
         unique_id: DTSU_Strom_B
         address: 0x200E
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: A
         input_type: holding
         scale: 0.001
@@ -59,7 +59,7 @@ modbus:
         unique_id: DTSU_Strom_C
         address: 0x2010
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: A
         input_type: holding
         scale: 0.001
@@ -69,7 +69,7 @@ modbus:
         unique_id: DTSU_Wirkleistung_A
         address: 0x2014
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -79,7 +79,7 @@ modbus:
         unique_id: DTSU_Wirkleistung_B
         address: 0x2016
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -89,7 +89,7 @@ modbus:
         unique_id: DTSU_Wirkleistung_C
         address: 0x2018
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -99,7 +99,7 @@ modbus:
         unique_id: DTSU_Wirkleistung_kombiniert
         address: 0x2012
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -109,7 +109,7 @@ modbus:
         unique_id: DTSU_Blindleistung_A
         address: 0x201C
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -119,7 +119,7 @@ modbus:
         unique_id: DTSU_Bindleistung_B
         address: 0x201E
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -129,7 +129,7 @@ modbus:
         unique_id: DTSU_Blindleistung_C
         address: 0x2020
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -139,7 +139,7 @@ modbus:
         unique_id: DTSU_Blindleistung_kombiniert
         address: 0x201A
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: W
         input_type: holding
         scale: 0.1
@@ -149,7 +149,7 @@ modbus:
         unique_id: DTSU_Frequenz
         address: 0x2044
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: Hz
         input_type: holding
         scale: 0.01
@@ -159,7 +159,7 @@ modbus:
         unique_id: DTSU_positive_Gesamtwirkenergier
         address: 0x101E
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: KWh
         input_type: holding
         scale: 1
@@ -169,7 +169,7 @@ modbus:
         unique_id: DTSU_negative_Gesamtwirkenergier
         address: 0x1028
         data_type: float32
-        slave: 254
+        unit_id: 254
         unit_of_measurement: KWh
         input_type: holding
         scale: 1
