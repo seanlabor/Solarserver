@@ -7,7 +7,7 @@ modbus:
     delay: 0
     sensors:
       - name: "Test Read Input"
-        unique_id: DTSU_Spannung_A
+        unique_id: Test Read Input
         address: 0x04  # Changed to match QModMaster start address
         data_type: float32
         slave: 254
@@ -15,173 +15,173 @@ modbus:
         scale: 0.1
         precision: 2
         scan_interval: 10
-      - name: "DTSU666_Spannung_A"
-        unique_id: DTSU_Spannung_A
-        address: 0x2006
-        data_type: float32
-        slave: 254
-        unit_of_measurement: V
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Spannung_B"
-        unique_id: DTSU_Spannung_B
-        address: 0x2008
-        data_type: float32
-        slave: 254
-        unit_of_measurement: V
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Spannung_C"
-        unique_id: DTSU_Spannung_C
-        address: 0x200A
-        data_type: float32
-        slave: 254
-        unit_of_measurement: V
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Strom_A"
-        unique_id: DTSU_Strom_A
-        address: 0x200C
-        data_type: float32
-        slave: 254
-        unit_of_measurement: A
-        input_type: holding
-        scale: 0.001
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Strom_B"
-        unique_id: DTSU_Strom_B
-        address: 0x200E
-        data_type: float32
-        slave: 254
-        unit_of_measurement: A
-        input_type: holding
-        scale: 0.001
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Strom_C"
-        unique_id: DTSU_Strom_C
-        address: 0x2010
-        data_type: float32
-        slave: 254
-        unit_of_measurement: A
-        input_type: holding
-        scale: 0.001
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Wirkleistung_A"
-        unique_id: DTSU_Wirkleistung_A
-        address: 0x2014
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Wirkleistung_B"
-        unique_id: DTSU_Wirkleistung_B
-        address: 0x2016
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Wirkleistung_C"
-        unique_id: DTSU_Wirkleistung_C
-        address: 0x2018
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Wirkleistung_kombiniert"
-        unique_id: DTSU_Wirkleistung_kombiniert
-        address: 0x2012
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Blindleistung_A"
-        unique_id: DTSU_Blindleistung_A
-        address: 0x201C
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Blindleistung_B"
-        unique_id: DTSU_Bindleistung_B
-        address: 0x201E
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Blindleistung_C"
-        unique_id: DTSU_Blindleistung_C
-        address: 0x2020
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Blindleistung_kombiniert"
-        unique_id: DTSU_Blindleistung_kombiniert
-        address: 0x201A
-        data_type: float32
-        slave: 254
-        unit_of_measurement: W
-        input_type: holding
-        scale: 0.1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_Frequenz"
-        unique_id: DTSU_Frequenz
-        address: 0x2044
-        data_type: float32
-        slave: 254
-        unit_of_measurement: Hz
-        input_type: holding
-        scale: 0.01
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_positive_Gesamtwirkenergier"
-        unique_id: DTSU_positive_Gesamtwirkenergier
-        address: 0x101E
-        data_type: float32
-        slave: 254
-        unit_of_measurement: KWh
-        input_type: holding
-        scale: 1
-        precision: 2
-        scan_interval: 10
-      - name: "DTSU666_negative_Gesamtwirkenergier"
-        unique_id: DTSU_negative_Gesamtwirkenergier
-        address: 0x1028
-        data_type: float32
-        slave: 254
-        unit_of_measurement: KWh
-        input_type: holding
-        scale: 1
-        precision: 2
-        scan_interval: 10
+      # - name: "DTSU666_Spannung_A"
+      #   unique_id: DTSU_Spannung_A
+      #   address: 0x2006
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: V
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Spannung_B"
+      #   unique_id: DTSU_Spannung_B
+      #   address: 0x2008
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: V
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Spannung_C"
+      #   unique_id: DTSU_Spannung_C
+      #   address: 0x200A
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: V
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Strom_A"
+      #   unique_id: DTSU_Strom_A
+      #   address: 0x200C
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: A
+      #   input_type: holding
+      #   scale: 0.001
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Strom_B"
+      #   unique_id: DTSU_Strom_B
+      #   address: 0x200E
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: A
+      #   input_type: holding
+      #   scale: 0.001
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Strom_C"
+      #   unique_id: DTSU_Strom_C
+      #   address: 0x2010
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: A
+      #   input_type: holding
+      #   scale: 0.001
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Wirkleistung_A"
+      #   unique_id: DTSU_Wirkleistung_A
+      #   address: 0x2014
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Wirkleistung_B"
+      #   unique_id: DTSU_Wirkleistung_B
+      #   address: 0x2016
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Wirkleistung_C"
+      #   unique_id: DTSU_Wirkleistung_C
+      #   address: 0x2018
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Wirkleistung_kombiniert"
+      #   unique_id: DTSU_Wirkleistung_kombiniert
+      #   address: 0x2012
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Blindleistung_A"
+      #   unique_id: DTSU_Blindleistung_A
+      #   address: 0x201C
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Blindleistung_B"
+      #   unique_id: DTSU_Bindleistung_B
+      #   address: 0x201E
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Blindleistung_C"
+      #   unique_id: DTSU_Blindleistung_C
+      #   address: 0x2020
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Blindleistung_kombiniert"
+      #   unique_id: DTSU_Blindleistung_kombiniert
+      #   address: 0x201A
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: W
+      #   input_type: holding
+      #   scale: 0.1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_Frequenz"
+      #   unique_id: DTSU_Frequenz
+      #   address: 0x2044
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: Hz
+      #   input_type: holding
+      #   scale: 0.01
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_positive_Gesamtwirkenergier"
+      #   unique_id: DTSU_positive_Gesamtwirkenergier
+      #   address: 0x101E
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: KWh
+      #   input_type: holding
+      #   scale: 1
+      #   precision: 2
+      #   scan_interval: 10
+      # - name: "DTSU666_negative_Gesamtwirkenergier"
+      #   unique_id: DTSU_negative_Gesamtwirkenergier
+      #   address: 0x1028
+      #   data_type: float32
+      #   slave: 254
+      #   unit_of_measurement: KWh
+      #   input_type: holding
+      #   scale: 1
+      #   precision: 2
+      #   scan_interval: 10
