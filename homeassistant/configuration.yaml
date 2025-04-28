@@ -35,7 +35,7 @@ modbus:
       #   scan_interval: 10
       - name: "DTSU666_Spannung_B"
         unique_id: DTSU_Spannung_B
-        address: 0x2008
+        address: 4139
         data_type: float32
         slave: 254
         input_type: input
