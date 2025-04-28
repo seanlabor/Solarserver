@@ -2,7 +2,7 @@ modbus:
   - type: tcp
     name: "Smartmeter"
     host: 192.168.178.67
-    port: 502
+    port: 8899
     timeout: 9
     sensors:
       - name: "DTSU666_Spannung_A"
