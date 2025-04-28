@@ -9,7 +9,6 @@ modbus:
       - name: "Test Read Input"
         unique_id: DTSU_Spannung_A
         address: 0x04  # Changed to match QModMaster start address
-        count: 4    # For float32, we need 2 registers
         data_type: float32
         slave: 254
         input_type: input  # Changed from holding to input registers
