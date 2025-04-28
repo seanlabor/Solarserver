@@ -1,3 +1,12 @@
+homeassistant:
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.178.0/24
+      allow_bypass_login: true
+
+    - type: homeassistant
+
 modbus:
   - type: tcp
     name: "Smartmeter"
@@ -31,7 +40,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: V
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -51,7 +60,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: A
-        input_type: holding
+        input_type: input
         scale: 0.001
         precision: 2
         scan_interval: 10
@@ -61,7 +70,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: A
-        input_type: holding
+        input_type: input
         scale: 0.001
         precision: 2
         scan_interval: 10
@@ -71,7 +80,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: A
-        input_type: holding
+        input_type: input
         scale: 0.001
         precision: 2
         scan_interval: 10
@@ -81,7 +90,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -91,7 +100,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -101,7 +110,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -111,7 +120,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -121,7 +130,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -131,7 +140,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -141,7 +150,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -151,7 +160,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: W
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -161,7 +170,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: Hz
-        input_type: holding
+        input_type: input
         scale: 0.01
         precision: 2
         scan_interval: 10
@@ -171,7 +180,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: KWh
-        input_type: holding
+        input_type: input
         scale: 1
         precision: 2
         scan_interval: 10
@@ -181,7 +190,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: KWh
-        input_type: holding
+        input_type: input
         scale: 1
         precision: 2
         scan_interval: 10
