@@ -103,8 +103,13 @@ influx write -b Sungather -o Solar -t Y5gQT9kCm8R7pX2jwFEbV6uNHMqLd4zA3PyGK0oUzt
 http://192.168.178.98:8086/signin
 
 
-Elfin Smartmeter TCP Gateway
+# Elfin Smartmeter TCP Gateway
 
 
 http://192.168.178.67/socket.html
 login: admin//admin
+
+# Github Runner 
+
+name: docker-container
+laeuft als service: /etc/systemd/system/actions.runner.seanlabor-Solarserver.docker-container.service
