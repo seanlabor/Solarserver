@@ -5,8 +5,17 @@ modbus:
     port: 8899
     timeout: 9
     delay: 0
-    message_wait_milliseconds: 300
     sensors:
+      - name: "Test Read Input"
+        unique_id: DTSU_Spannung_A
+        address: 0x04  # Changed to match QModMaster start address
+        count: 4    # For float32, we need 2 registers
+        data_type: float32
+        slave: 254
+        input_type: input  # Changed from holding to input registers
+        scale: 0.1
+        precision: 2
+        scan_interval: 10
       - name: "DTSU666_Spannung_A"
         unique_id: DTSU_Spannung_A
         address: 0x2006
