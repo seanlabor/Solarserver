@@ -21,7 +21,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: V
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
@@ -41,7 +41,7 @@ modbus:
         data_type: float32
         slave: 254
         unit_of_measurement: V
-        input_type: holding
+        input_type: input
         scale: 0.1
         precision: 2
         scan_interval: 10
