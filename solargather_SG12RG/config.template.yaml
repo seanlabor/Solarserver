@@ -59,7 +59,7 @@ exports:
     enabled: True                          # [Optional] Default is False
     host: ${VM_HOST_IP}                   # [Required] IP or Hostname of MQTT Server 
     # port: 1883                            # [Optional] Default 1883
-    topic: "SunGather/SG4"       # [Optional] Default: "SunGather/{serial_number}"
+    topic: "SunGather/SG12"       # [Optional] Default: "SunGather/{serial_number}"
     username: ${MQTT_USERNAME}                 # [Optional] Username is MQTT server requires it
     password: ${MQTT_PASSWORD}                # [Optional] Password is MQTT server requires it
     # client_id:                            # [Optional] Client id for mqtt connection. Defaults to Serial Number.
