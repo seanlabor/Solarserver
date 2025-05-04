@@ -16,11 +16,6 @@ modbus:
         precision: 0
         scan_interval: 10
         unit_of_measurement: "W"
-
-mqtt:
-  # MQTT Core Configuration
-  discovery: true
-  discovery_prefix: homeassistant
   
   # Combined Sensors Configuration (merged both sections)
   sensor:
