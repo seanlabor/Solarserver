@@ -66,6 +66,18 @@ exports:
         device_class: energy
         state_class: total_increasing
         icon: "mdi:solar-power"
+      - name: "Monthly Generation"
+        sensor_type: sensor
+        register: monthly_power_yields
+        device_class: energy
+        state_class: total_increasing
+        icon: "mdi:solar-power"
+      - name: "Total Generation"
+        sensor_type: sensor
+        register: total_power_yields
+        device_class: energy
+        state_class: total_increasing
+        icon: "mdi:solar-power"
       - name: "Temperature"
         sensor_type: sensor
         register: internal_temperature

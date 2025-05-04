@@ -65,9 +65,26 @@ exports:
     # client_id:                            # [Optional] Client id for mqtt connection. Defaults to Serial Number.
     homeassistant: True
     ha_sensors:
+      - name: "Active Generation"
+        sensor_type: sensor
+        register: total_active_power
+        dev_class: power
+        state_class: measurement
       - name: "Daily Generation"
         sensor_type: sensor
         register: daily_power_yields
+        device_class: energy
+        state_class: total_increasing
+        icon: "mdi:solar-power"
+      - name: "Monthly Generation"
+        sensor_type: sensor
+        register: monthly_power_yields
+        device_class: energy
+        state_class: total_increasing
+        icon: "mdi:solar-power"
+      - name: "Total Generation"
+        sensor_type: sensor
+        register: total_power_yields
         device_class: energy
         state_class: total_increasing
         icon: "mdi:solar-power"
@@ -82,8 +99,3 @@ exports:
         device_class: running
         payload_on: "ON"
         payload_off: "OFF"
-      - name: "Active Generation"
-        sensor_type: sensor
-        register: total_active_power
-        dev_class: power
-        state_class: measurement

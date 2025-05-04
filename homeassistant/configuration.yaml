@@ -1,136 +1,137 @@
-mqtt:
-  # Combined Sensors Configuration (merged both sections)
-  sensor:
-    # --- SG4 Sensors ---
-    - name: "Sungrow SG4 Daily Generation"
-      unique_id: "sungrow_a21c221162_daily_generation"
-      state_topic: "SunGather/SG4"
-      value_template: "{{ value_json.daily_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      icon: "mdi:solar-power"
-      device:
-        identifiers: 
-          - sungrow_a21c221162
-        name: "Sungrow Inverter"
-        model: "SG4.0RS"
-        manufacturer: "Sungrow"
-        sw_version: "{{ value_json.model }}"
+#Wenn discovery nicht funktioniert, benutze diese Eintraege um die JSON MQTT Message zu deparsen
+# mqtt:
+#   # Combined Sensors Configuration (merged both sections)
+#   sensor:
+#     # --- SG4 Sensors ---
+#     - name: "Sungrow SG4 Daily Generation"
+#       unique_id: "sungrow_a21c221162_daily_generation"
+#       state_topic: "SunGather/SG4"
+#       value_template: "{{ value_json.daily_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       icon: "mdi:solar-power"
+#       device:
+#         identifiers: 
+#           - sungrow_a21c221162
+#         name: "Sungrow Inverter"
+#         model: "SG4.0RS"
+#         manufacturer: "Sungrow"
+#         sw_version: "{{ value_json.model }}"
       
-    - name: "Sungrow SG4 Temperature"
-      unique_id: "sungrow_a21c221162_temperature"
-      state_topic: "SunGather/SG4"
-      value_template: "{{ value_json.internal_temperature }}"
-      unit_of_measurement: "°C"
-      device_class: temperature
-      state_class: measurement
-      device:
-        identifiers: 
-          - sungrow_a21c221162
+#     - name: "Sungrow SG4 Temperature"
+#       unique_id: "sungrow_a21c221162_temperature"
+#       state_topic: "SunGather/SG4"
+#       value_template: "{{ value_json.internal_temperature }}"
+#       unit_of_measurement: "°C"
+#       device_class: temperature
+#       state_class: measurement
+#       device:
+#         identifiers: 
+#           - sungrow_a21c221162
       
-    - name: "Sungrow SG4 Active Generation"
-      unique_id: "sungrow_a21c221162_active_power"
-      state_topic: "SunGather/SG4"
-      value_template: "{{ value_json.total_active_power }}"
-      unit_of_measurement: "W"
-      device_class: power
-      state_class: measurement
-      device:
-        identifiers: 
-          - sungrow_a21c221162
+#     - name: "Sungrow SG4 Active Generation"
+#       unique_id: "sungrow_a21c221162_active_power"
+#       state_topic: "SunGather/SG4"
+#       value_template: "{{ value_json.total_active_power }}"
+#       unit_of_measurement: "W"
+#       device_class: power
+#       state_class: measurement
+#       device:
+#         identifiers: 
+#           - sungrow_a21c221162
       
-    - name: "Sungrow SG4 Total Generation"
-      unique_id: "sungrow_a21c221162_total_generation"
-      state_topic: "SunGather/SG4"
-      value_template: "{{ value_json.total_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      device:
-        identifiers: 
-          - sungrow_a21c221162
+#     - name: "Sungrow SG4 Total Generation"
+#       unique_id: "sungrow_a21c221162_total_generation"
+#       state_topic: "SunGather/SG4"
+#       value_template: "{{ value_json.total_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       device:
+#         identifiers: 
+#           - sungrow_a21c221162
       
-    - name: "Sungrow SG4 Monthly Generation"
-      unique_id: "sungrow_a21c221162_monthly_generation"
-      state_topic: "SunGather/SG4"
-      value_template: "{{ value_json.monthly_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      device:
-        identifiers: 
-          - sungrow_a21c221162
+#     - name: "Sungrow SG4 Monthly Generation"
+#       unique_id: "sungrow_a21c221162_monthly_generation"
+#       state_topic: "SunGather/SG4"
+#       value_template: "{{ value_json.monthly_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       device:
+#         identifiers: 
+#           - sungrow_a21c221162
       
-    # --- SG12 Sensors ---
-    - name: "Sungrow SG12 Daily Generation"
-      unique_id: "sungrow_sg12_a21c221162_daily_generation"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.daily_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      icon: "mdi:solar-power"
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
-        name: "Sungrow SG12 Inverter"
-        model: "SG4.0RS"
-        manufacturer: "Sungrow"
-        sw_version: "{{ value_json.model }}"
+#     # --- SG12 Sensors ---
+#     - name: "Sungrow SG12 Daily Generation"
+#       unique_id: "sungrow_sg12_a21c221162_daily_generation"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.daily_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       icon: "mdi:solar-power"
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
+#         name: "Sungrow SG12 Inverter"
+#         model: "SG4.0RS"
+#         manufacturer: "Sungrow"
+#         sw_version: "{{ value_json.model }}"
       
-    - name: "Sungrow SG12 Temperature"
-      unique_id: "sungrow_sg12_a21c221162_temperature"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.internal_temperature }}"
-      unit_of_measurement: "°C"
-      device_class: temperature
-      state_class: measurement
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
+#     - name: "Sungrow SG12 Temperature"
+#       unique_id: "sungrow_sg12_a21c221162_temperature"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.internal_temperature }}"
+#       unit_of_measurement: "°C"
+#       device_class: temperature
+#       state_class: measurement
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
       
-    - name: "Sungrow SG12 Active Generation"
-      unique_id: "sungrow_sg12_a21c221162_active_power"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.total_active_power }}"
-      unit_of_measurement: "W"
-      device_class: power
-      state_class: measurement
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
+#     - name: "Sungrow SG12 Active Generation"
+#       unique_id: "sungrow_sg12_a21c221162_active_power"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.total_active_power }}"
+#       unit_of_measurement: "W"
+#       device_class: power
+#       state_class: measurement
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
       
-    - name: "Sungrow SG12 Total Generation"
-      unique_id: "sungrow_sg12_a21c221162_total_generation"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.total_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
+#     - name: "Sungrow SG12 Total Generation"
+#       unique_id: "sungrow_sg12_a21c221162_total_generation"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.total_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
       
-    - name: "Sungrow SG12 Monthly Generation"
-      unique_id: "sungrow_sg12_a21c221162_monthly_generation"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.monthly_power_yields }}"
-      unit_of_measurement: "kWh"
-      device_class: energy
-      state_class: total_increasing
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
+#     - name: "Sungrow SG12 Monthly Generation"
+#       unique_id: "sungrow_sg12_a21c221162_monthly_generation"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.monthly_power_yields }}"
+#       unit_of_measurement: "kWh"
+#       device_class: energy
+#       state_class: total_increasing
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
       
-    - name: "Sungrow SG12 Work State"
-      unique_id: "sungrow_sg12_a21c221162_work_state"
-      state_topic: "SunGather/SG12"
-      value_template: "{{ value_json.work_state_1 }}"
-      icon: "mdi:cog"
-      device:
-        identifiers: 
-          - sungrow_sg12_a21c221162
+#     - name: "Sungrow SG12 Work State"
+#       unique_id: "sungrow_sg12_a21c221162_work_state"
+#       state_topic: "SunGather/SG12"
+#       value_template: "{{ value_json.work_state_1 }}"
+#       icon: "mdi:cog"
+#       device:
+#         identifiers: 
+#           - sungrow_sg12_a21c221162
 
 modbus:
   - type: tcp
