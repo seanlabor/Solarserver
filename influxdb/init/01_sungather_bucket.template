@@ -4,10 +4,18 @@ set -euo pipefail
 # This script runs ONCE, after the built-in setup.
 # It is idempotent: if the bucket already exists, nothing happens.
 
+echo "Waiting for InfluxDB to be ready..."
+until curl -s http://192.168.178.98:8086/health | grep '"status":"pass"' > /dev/null; do
+  sleep 2
+done
+
+echo "InfluxDB is healthy, creating additional buckets..."
+
 CLI_TOKEN="${INFLUXDB_INIT_TOKEN}"
 ORG="${INFLUXDB_ORG}"
+INFLUXDB_BUCKET_SG12RG="${INFLUXDB_BUCKET_SG12RG}"
 
-if ! influx bucket list -o "$ORG" -t "$CLI_TOKEN" | grep -q '^Sungather_SG12RG'; then
+if ! influx bucket list -o "$ORG" -t "$CLI_TOKEN" | grep -q "^$INFLUXDB_BUCKET_SG12RG"; then
   echo "Creating bucket Sungather_SG12RG …"
   influx bucket create \
         --name Sungather_SG12RG \
