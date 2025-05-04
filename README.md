@@ -115,3 +115,5 @@ login: admin//admin
 
 name: docker-container
 laeuft als service: /etc/systemd/system/actions.runner.seanlabor-Solarserver.docker-container.service
+
+Trigger
