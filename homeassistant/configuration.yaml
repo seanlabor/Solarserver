@@ -1,22 +1,3 @@
-# modbus:
-#   - type: tcp
-#     name: "Smartmeter"
-#     host: 192.168.178.67
-#     port: 8899
-#     timeout: 9
-#     delay: 0
-#     sensors:
-#       - name: "DTSU666_Total_Active_Power"
-#         unique_id: DTSU_Total_Active_Power
-#         address: 362  # Total Active Power
-#         data_type: int32
-#         slave: 254
-#         input_type: holding
-#         scale: 1
-#         precision: 0
-#         scan_interval: 10
-#         unit_of_measurement: "W"
-
 mqtt:
   # Combined Sensors Configuration (merged both sections)
   sensor:
@@ -298,3 +279,22 @@ mqtt:
         name: "Sungrow SG12 Inverter"
         model: "SG4.0RS"
         manufacturer: "Sungrow"
+
+modbus:
+  - type: tcp
+    name: "Smartmeter"
+    host: 192.168.178.67
+    port: 8899
+    timeout: 9
+    delay: 0
+    sensors:
+      - name: "DTSU666_Total_Active_Power"
+        unique_id: DTSU_Total_Active_Power
+        address: 364  # Total Active Power
+        data_type: int32
+        slave: 254
+        input_type: holding
+        scale: 1
+        precision: 0
+        scan_interval: 10
+        unit_of_measurement: "W"
