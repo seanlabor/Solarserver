@@ -26,8 +26,6 @@ services:
   influxdb:
     image: influxdb:2.7
     container_name: influxdb
-    environment:
-      - DOCKER_INFLUXDB_INIT_CLI_CONFIG_NAME=influx_cli
     volumes:
       - ./influxdb/data:/var/lib/influxdb2
       - ./influxdb/config:/etc/influxdb2
@@ -36,6 +34,7 @@ services:
       - "8086:8086"
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_CLI_CONFIG_NAME=influx_cli
       - DOCKER_INFLUXDB_INIT_ORG=${INFLUXDB_ORG}
       - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUXDB_BUCKET_SG4RG}
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUXDB_INIT_TOKEN}
