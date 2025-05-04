@@ -16,7 +16,8 @@ modbus:
         precision: 0
         scan_interval: 10
         unit_of_measurement: "W"
-  
+
+mqtt:
   # Combined Sensors Configuration (merged both sections)
   sensor:
     # --- SG4 Sensors ---
