@@ -26,6 +26,8 @@ services:
   influxdb:
     image: influxdb:2.7
     container_name: influxdb
+    environment:
+      - DOCKER_INFLUXDB_INIT_CLI_CONFIG_NAME=influx_cli
     volumes:
       - ./influxdb/data:/var/lib/influxdb2
       - ./influxdb/config:/etc/influxdb2
