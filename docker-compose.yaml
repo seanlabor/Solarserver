@@ -26,6 +26,8 @@ services:
   influxdb:
     image: influxdb:2.7
     container_name: influxdb
+    env_file:                  
+      - .env
     volumes:
       - ./influxdb/data:/var/lib/influxdb2
       - ./influxdb/config:/etc/influxdb2
