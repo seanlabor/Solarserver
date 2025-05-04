@@ -102,6 +102,8 @@ influx write -b Sungather -o Solar -t Y5gQT9kCm8R7pX2jwFEbV6uNHMqLd4zA3PyGK0oUzt
 
 http://192.168.178.98:8086/signin
 
+Bucket Sungather_SG12RG has to be created manually after a new init of Influx
+
 
 # Elfin Smartmeter TCP Gateway
 

@@ -14,7 +14,9 @@ services:
     image: eclipse-mosquitto:latest
     container_name: mqtt
     volumes:
-      - ./mosquitto:/mosquitto
+      - /opt/mosquitto/config:/mosquitto/config
+      - /opt/mosquitto/data:/mosquitto/data
+      - /opt/mosquitto/log:/mosquitto/log
     ports:
       - "1883:1883"
       - "9001:9001"
@@ -25,8 +27,8 @@ services:
     image: influxdb:2.7
     container_name: influxdb
     volumes:
-      - ./influxdb:/var/lib/influxdb2
-      - ./config:/etc/influxdb2
+      - ./influxdb/data:/var/lib/influxdb2
+      - ./influxdb/config:/etc/influxdb2
     ports:
       - "8086:8086"
     environment:
