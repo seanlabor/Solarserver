@@ -6,7 +6,6 @@ modbus:
     timeout: 9
     delay: 0
     sensors:
-
       - name: "DTSU666_Total_Active_Power"
         unique_id: DTSU_Total_Active_Power
         address: 362  # Total Active Power
@@ -19,100 +18,105 @@ modbus:
         unit_of_measurement: "W"
 
 mqtt:
+  # MQTT Core Configuration
+  discovery: true
+  discovery_prefix: homeassistant
+  
+  # Combined Sensors Configuration (merged both sections)
   sensor:
-    # Daily Energy Generation
+    # --- SG4 Sensors ---
     - name: "Sungrow SG4 Daily Generation"
       unique_id: "sungrow_a21c221162_daily_generation"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.daily_power_yields }}"
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
       icon: "mdi:solar-power"
+      device:
+        identifiers: 
+          - sungrow_a21c221162
+        name: "Sungrow Inverter"
+        model: "SG4.0RS"
+        manufacturer: "Sungrow"
+        sw_version: "{{ value_json.model }}"
       
-    # Inverter Temperature
     - name: "Sungrow SG4 Temperature"
       unique_id: "sungrow_a21c221162_temperature"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.internal_temperature }}"
       unit_of_measurement: "°C"
       device_class: temperature
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Active Power Generation
     - name: "Sungrow SG4 Active Generation"
       unique_id: "sungrow_a21c221162_active_power"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.total_active_power }}"
       unit_of_measurement: "W"
       device_class: power
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Total Power Yields (Lifetime Generation)
     - name: "Sungrow SG4 Total Generation"
       unique_id: "sungrow_a21c221162_total_generation"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.total_power_yields }}"
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Monthly Power Yields
     - name: "Sungrow SG4 Monthly Generation"
       unique_id: "sungrow_a21c221162_monthly_generation"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.monthly_power_yields }}"
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Phase A Voltage
     - name: "Sungrow SG4 Grid Voltage"
       unique_id: "sungrow_a21c221162_voltage"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.phase_a_voltage }}"
       unit_of_measurement: "V"
       device_class: voltage
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Daily Running Time
     - name: "Sungrow SG4 Daily Running Time"
       unique_id: "sungrow_a21c221162_daily_runtime"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.daily_running_time }}"
       unit_of_measurement: "min"
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-    # Total Running Time
     - name: "Sungrow SG4 Total Running Time"
       unique_id: "sungrow_a21c221162_total_runtime"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
+      state_topic: "SunGather/SG4"
       value_template: "{{ value_json.total_running_time }}"
       unit_of_measurement: "h"
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_a21c221162
       
-  binary_sensor:
-    # Power State (ON/OFF)
-    - name: "Sungrow SG4 Power State"
-      unique_id: "sungrow_a21c221162_power_state"
-      state_topic: "SunGather/SG4"  # Replace with your actual MQTT topic
-      value_template: "{{ value_json.run_state }}"
-      device_class: running
-      payload_on: "ON"
-      payload_off: "OFF"
-      
-  # Create a device for all these sensors
-  device:
-    identifiers: 
-      - sungrow_a21c221162
-    name: "Sungrow Inverter"
-    model: "SG4.0RS"
-    manufacturer: "Sungrow"
-    sw_version: "{{ value_json.model }}"
-
-mqtt:
-  sensor:
-    # Daily Energy Generation
+    # --- SG12 Sensors ---
     - name: "Sungrow SG12 Daily Generation"
       unique_id: "sungrow_sg12_a21c221162_daily_generation"
       state_topic: "SunGather/SG12"
@@ -121,8 +125,14 @@ mqtt:
       device_class: energy
       state_class: total_increasing
       icon: "mdi:solar-power"
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
+        name: "Sungrow SG12 Inverter"
+        model: "SG4.0RS"
+        manufacturer: "Sungrow"
+        sw_version: "{{ value_json.model }}"
       
-    # Inverter Temperature
     - name: "Sungrow SG12 Temperature"
       unique_id: "sungrow_sg12_a21c221162_temperature"
       state_topic: "SunGather/SG12"
@@ -130,8 +140,10 @@ mqtt:
       unit_of_measurement: "°C"
       device_class: temperature
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Active Power Generation
     - name: "Sungrow SG12 Active Generation"
       unique_id: "sungrow_sg12_a21c221162_active_power"
       state_topic: "SunGather/SG12"
@@ -139,8 +151,10 @@ mqtt:
       unit_of_measurement: "W"
       device_class: power
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Apparent Power
     - name: "Sungrow SG12 Apparent Power"
       unique_id: "sungrow_sg12_a21c221162_apparent_power"
       state_topic: "SunGather/SG12"
@@ -148,8 +162,10 @@ mqtt:
       unit_of_measurement: "VA"
       device_class: apparent_power
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Total Power Yields (Lifetime Generation)
     - name: "Sungrow SG12 Total Generation"
       unique_id: "sungrow_sg12_a21c221162_total_generation"
       state_topic: "SunGather/SG12"
@@ -157,8 +173,10 @@ mqtt:
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Monthly Power Yields
     - name: "Sungrow SG12 Monthly Generation"
       unique_id: "sungrow_sg12_a21c221162_monthly_generation"
       state_topic: "SunGather/SG12"
@@ -166,8 +184,10 @@ mqtt:
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Phase A Voltage
     - name: "Sungrow SG12 Grid Voltage"
       unique_id: "sungrow_sg12_a21c221162_voltage"
       state_topic: "SunGather/SG12"
@@ -175,24 +195,30 @@ mqtt:
       unit_of_measurement: "V"
       device_class: voltage
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Daily Running Time
     - name: "Sungrow SG12 Daily Running Time"
       unique_id: "sungrow_sg12_a21c221162_daily_runtime"
       state_topic: "SunGather/SG12"
       value_template: "{{ value_json.daily_running_time }}"
       unit_of_measurement: "min"
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Total Running Time
     - name: "Sungrow SG12 Total Running Time"
       unique_id: "sungrow_sg12_a21c221162_total_runtime"
       state_topic: "SunGather/SG12"
       value_template: "{{ value_json.total_running_time }}"
       unit_of_measurement: "h"
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Daily Export to Grid
     - name: "Sungrow SG12 Daily Export"
       unique_id: "sungrow_sg12_a21c221162_daily_export"
       state_topic: "SunGather/SG12"
@@ -200,8 +226,10 @@ mqtt:
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Daily Import from Grid
     - name: "Sungrow SG12 Daily Import"
       unique_id: "sungrow_sg12_a21c221162_daily_import"
       state_topic: "SunGather/SG12"
@@ -209,8 +237,10 @@ mqtt:
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Current Export to Grid
     - name: "Sungrow SG12 Export Power"
       unique_id: "sungrow_sg12_a21c221162_export_power"
       state_topic: "SunGather/SG12"
@@ -218,8 +248,10 @@ mqtt:
       unit_of_measurement: "W"
       device_class: power
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Current Import from Grid
     - name: "Sungrow SG12 Import Power"
       unique_id: "sungrow_sg12_a21c221162_import_power"
       state_topic: "SunGather/SG12"
@@ -227,16 +259,36 @@ mqtt:
       unit_of_measurement: "W"
       device_class: power
       state_class: measurement
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
-    # Work State
     - name: "Sungrow SG12 Work State"
       unique_id: "sungrow_sg12_a21c221162_work_state"
       state_topic: "SunGather/SG12"
       value_template: "{{ value_json.work_state_1 }}"
       icon: "mdi:cog"
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
       
   binary_sensor:
-    # Power State (ON/OFF)
+    # SG4 Binary Sensors
+    - name: "Sungrow SG4 Power State"
+      unique_id: "sungrow_a21c221162_power_state"
+      state_topic: "SunGather/SG4"
+      value_template: "{{ value_json.run_state }}"
+      device_class: running
+      payload_on: "ON"
+      payload_off: "OFF"
+      device:
+        identifiers: 
+          - sungrow_a21c221162
+        name: "Sungrow Inverter"
+        model: "SG4.0RS"
+        manufacturer: "Sungrow"
+    
+    # SG12 Binary Sensors
     - name: "Sungrow SG12 Power State"
       unique_id: "sungrow_sg12_a21c221162_power_state"
       state_topic: "SunGather/SG12"
@@ -244,12 +296,9 @@ mqtt:
       device_class: running
       payload_on: "ON"
       payload_off: "OFF"
-      
-  # Create a device for all these sensors
-  device:
-    identifiers: 
-      - sungrow_sg12_a21c221162
-    name: "Sungrow SG12 Inverter"
-    model: "SG4.0RS"
-    manufacturer: "Sungrow"
-    sw_version: "{{ value_json.model }}"
+      device:
+        identifiers: 
+          - sungrow_sg12_a21c221162
+        name: "Sungrow SG12 Inverter"
+        model: "SG4.0RS"
+        manufacturer: "Sungrow"

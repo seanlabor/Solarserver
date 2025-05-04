@@ -128,3 +128,6 @@ mqtt_1                 | 1595765174: Error saving in-memory database, unable to 
 mqtt_1                 | 1595765174: Error: Permission denied.
 
 sudo chown -R 1883:1883 mosquitto-data
+
+## MQTT & HA
+Setting up MQTT via config file in HA does not work. Add MQTT as Integration in HA Web UI
