@@ -1,32 +1,32 @@
-modbus:
-  - type: tcp
-    name: "Smartmeter"
-    host: 192.168.178.67
-    port: 8899
-    timeout: 9
-    delay: 0
-    sensors:
+# modbus:
+#   - type: tcp
+#     name: "Smartmeter"
+#     host: 192.168.178.67
+#     port: 8899
+#     timeout: 9
+#     delay: 0
+#     sensors:
 
-      - name: "DTSU666_Total_Active_Power"
-        unique_id: DTSU_Total_Active_Power
-        address: 0x016A  # Total Active Power
-        data_type: float32
-        slave: 254
-        input_type: holding
-        scale: 0.1
-        precision: 1
-        swap: byte
-        scan_interval: 10
-        unit_of_measurement: "W"
+#       - name: "DTSU666_Total_Active_Power"
+#         unique_id: DTSU_Total_Active_Power
+#         address: 0x016A  # Total Active Power
+#         data_type: float32
+#         slave: 254
+#         input_type: holding
+#         scale: 0.1
+#         precision: 1
+#         swap: byte
+#         scan_interval: 10
+#         unit_of_measurement: "W"
 
-      - name: "DTSU666_Reactive_Power_A"
-        unique_id: DTSU_Reactive_Power_A
-        address: 0x016C  # Reactive Power Phase A
-        data_type: float32
-        slave: 254
-        input_type: holding
-        scale: 0.1
-        swap: byte
-        precision: 1
-        scan_interval: 10
-        unit_of_measurement: "Var"
+#       - name: "DTSU666_Reactive_Power_A"
+#         unique_id: DTSU_Reactive_Power_A
+#         address: 0x016C  # Reactive Power Phase A
+#         data_type: float32
+#         slave: 254
+#         input_type: holding
+#         scale: 0.1
+#         swap: byte
+#         precision: 1
+#         scan_interval: 10
+#         unit_of_measurement: "Var"

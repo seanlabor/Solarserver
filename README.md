@@ -116,4 +116,15 @@ login: admin//admin
 name: docker-container
 laeuft als service: /etc/systemd/system/actions.runner.seanlabor-Solarserver.docker-container.service
 
-Trigger
+
+
+{"model": "SG4.0RS", "serial_number": "A21C221162", "level": 1, "scan_interval": 30, "use_local_time": false, "smart_meter": false, "connection": "modbus", "slave": 1, "start_time": "", "host": "192.168.178.61", "port": 502, "timeout": 10, "retries": 3, "RetryOnEmpty": false, "device_type_code": "SG4.0RS", "run_state": "ON", "last_reset": "2025-5-4 0:00:09", "daily_export_to_grid": 0.0, "daily_import_from_grid": 0.0, "daily_power_yields": 9.0, "total_power_yields": 4618.1, "total_running_time": 6016, "internal_temperature": 45.1, "total_apparent_power": 706, "phase_a_voltage": 233.4, "total_active_power": 706, "work_state_1": "Run", "daily_running_time": 465, "monthly_power_yields": 48.9, "start_stop": "Start", "timestamp": "2025-5-4 14:34:39", "export_to_grid": 0, "import_from_grid": 0}
+
+
+# Troubleshooting
+
+mqtt_1                 | 1595765174: Saving in-memory database to /mosquitto/data/mosquitto.db.
+mqtt_1                 | 1595765174: Error saving in-memory database, unable to open /mosquitto/data/mosquitto.db.new for writing.
+mqtt_1                 | 1595765174: Error: Permission denied.
+
+sudo chown -R 1883:1883 mosquitto-data
